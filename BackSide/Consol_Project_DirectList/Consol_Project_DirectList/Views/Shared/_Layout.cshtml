@@ -1,4 +1,9 @@
-﻿<!doctype html>
+﻿@model VmLayout
+@inject AppDbContext _context
+
+@inject UserManager<IdentityUser> userManager
+@inject SignInManager<IdentityUser> signInManager
+<!doctype html>
 <html lang="en">
 
 
@@ -53,7 +58,7 @@
                                 <ul id="responsive">
                                     <li>
                                         <a class="current" asp-controller="Home" asp-action="Index">Home</a>
-                                       
+
                                     </li>
                                     <li>
                                         <a href="#">Listings</a>
@@ -212,7 +217,7 @@
     <script type="text/javascript" src="~/scripts/tooltips.min.js"></script>
     <script type="text/javascript" src="~/scripts/jquery.countdown.min.js"></script>
     <script type="text/javascript" src="~/scripts/bootstrap-datepicker.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete"></script> 
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete"></script>
     <script src="https://kit.fontawesome.com/6ff3f42b45.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="~/scripts/custom.js"></script>
 </body>

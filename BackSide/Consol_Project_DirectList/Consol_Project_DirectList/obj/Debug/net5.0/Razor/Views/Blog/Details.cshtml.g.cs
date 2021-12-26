@@ -26,8 +26,29 @@ using Consol_Project_DirectList.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\Views\_ViewImports.cshtml"
+using Consol_Project_DirectList.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\Views\_ViewImports.cshtml"
+using Consol_Project_DirectList.Data;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\Views\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ba16fa9dab1a4174b788fd0f11784472bedf201e", @"/Views/Blog/Details.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bd4826c3f374dadb2bb8d05934177141d5b73fab", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a506c3ed1a6c1584acf9c8c6fade0c7893e241b6", @"/Views/_ViewImports.cshtml")]
     public class Views_Blog_Details : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("post-img img-fluid"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -116,7 +137,7 @@ using Consol_Project_DirectList.Models;
                         <div class=""blog-post single-post"">
                             <!-- Img -->
                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ba16fa9dab1a4174b788fd0f11784472bedf201e9815", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ba16fa9dab1a4174b788fd0f11784472bedf201e10492", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -178,7 +199,7 @@ using Consol_Project_DirectList.Models;
                         <!-- About Author -->
                         <div class=""about-author"">
                             ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ba16fa9dab1a4174b788fd0f11784472bedf201e14676", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ba16fa9dab1a4174b788fd0f11784472bedf201e15354", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -204,7 +225,7 @@ using Consol_Project_DirectList.Models;
                             <h4 class=""headline margin-bottom-35"">Comments <span class=""comments-amount"">(5)</span></h4>
                             <div class=""row py-4 list-img-wrap"">
                                 <div class=""col-md-2 list-img"">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ba16fa9dab1a4174b788fd0f11784472bedf201e16637", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ba16fa9dab1a4174b788fd0f11784472bedf201e17315", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -232,7 +253,7 @@ using Consol_Project_DirectList.Models;
                             </div>
                             <div class=""row py-4 list-img-wrap"">
                                 <div class=""col-md-2 list-img"">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ba16fa9dab1a4174b788fd0f11784472bedf201e18862", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ba16fa9dab1a4174b788fd0f11784472bedf201e19540", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -257,7 +278,7 @@ using Consol_Project_DirectList.Models;
                             </div>
                             <div class=""row py-4 list-img-wrap"">
                                 <div class=""col-md-2 list-img"">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ba16fa9dab1a4174b788fd0f11784472bedf201e20807", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ba16fa9dab1a4174b788fd0f11784472bedf201e21485", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -288,7 +309,7 @@ using Consol_Project_DirectList.Models;
                         <!-- Add Comment -->
                         <div id=""add-review"" class=""add-review-b");
             WriteLiteral("ox mt-4\">\r\n                            <!-- Add Review -->\r\n                            <h3 class=\"listing-desc-headline mb-4\">Add Review</h3>\r\n                            <!-- Review Comment -->\r\n                            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ba16fa9dab1a4174b788fd0f11784472bedf201e23306", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ba16fa9dab1a4174b788fd0f11784472bedf201e23984", async() => {
                 WriteLiteral(@"
                                 <fieldset>
                                     <div class=""row"">
@@ -367,7 +388,7 @@ using Consol_Project_DirectList.Models;
                                         <div class=""widget-content"">
                                             <div class=""widget-thumb"">
                                                 <a href=""pages-blog-post.html"">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ba16fa9dab1a4174b788fd0f11784472bedf201e28523", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ba16fa9dab1a4174b788fd0f11784472bedf201e29201", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -395,7 +416,7 @@ using Consol_Project_DirectList.Models;
                                         <div class=""widget-content"">
                                             <div class=""widget-thumb"">
                                                 <a href=""pages-blog-post.html"">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ba16fa9dab1a4174b788fd0f11784472bedf201e30507", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ba16fa9dab1a4174b788fd0f11784472bedf201e31185", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -423,7 +444,7 @@ using Consol_Project_DirectList.Models;
                                         <div class=""widget-content"">
                                             <div class=""widget-thumb"">
                                                 <a href=""pages-blog-post.html"">");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ba16fa9dab1a4174b788fd0f11784472bedf201e32505", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ba16fa9dab1a4174b788fd0f11784472bedf201e33183", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

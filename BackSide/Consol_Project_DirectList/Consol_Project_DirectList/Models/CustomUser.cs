@@ -21,6 +21,8 @@ namespace Consol_Project_DirectList.Models
         [MaxLength(250)]
         public string Surname { get; set; }
         public DateTime CreateDate { get; set; }
+        [NotMapped]
+        public string RoleId { get; set; }
 
         public List<Blog> Blog { get; set; }
 

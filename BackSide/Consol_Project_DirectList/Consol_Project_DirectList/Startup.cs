@@ -1,4 +1,5 @@
 using Consol_Project_DirectList.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -35,6 +36,10 @@ namespace Consol_Project_DirectList
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Consol_Project_DirectListCS")));
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.Configure<CookieAuthenticationOptions>(options =>
+            {
+                options.AccessDeniedPath = new PathString("/admin/Account/Login");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +67,11 @@ namespace Consol_Project_DirectList
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapAreaControllerRoute(
+             name: "Areas",
+             areaName: "admin",
+             pattern: "admin/{controller=Account}/{action=Login}/{id?}");
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

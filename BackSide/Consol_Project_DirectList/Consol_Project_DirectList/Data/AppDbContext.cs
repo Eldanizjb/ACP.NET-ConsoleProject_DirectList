@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Consol_Project_DirectList.Models;
-
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Consol_Project_DirectList.Data
 {
