@@ -24,9 +24,21 @@ namespace Consol_Project_DirectList.Controllers
             VmListings model = new VmListings()
             {
                 Banner = _context.Banner.FirstOrDefault(b => b.Page == "Listings"),
+                Sosial = _context.Sosial.ToList(),
 
+                Helpers = _context.Helpers.ToList(),
+                Book = _context.Book.ToList(),
+                Comment = _context.Comment.ToList(),
+                ContactInfo = _context.ContactInfo.ToList(),
+                Details = _context.Details.ToList(),
+                Features = _context.Features.ToList(),
+                Guest = _context.Guest.ToList(),
+                KeyPeople = _context.KeyPeople.ToList(),
+                Locations = _context.Locations.ToList(),
+                Menu = _context.Menu.ToList(),
+                Restaurant = _context.Restaurant.ToList(),
+                RestaurantCategory = _context.RestaurantCategory.ToList(),
             };
-
             return View(model);
         }
 
@@ -35,7 +47,18 @@ namespace Consol_Project_DirectList.Controllers
             VmListings model = new VmListings()
             {
                 Banner = _context.Banner.FirstOrDefault(b => b.Page == "ListingsDetails"),
-
+                Helpers = _context.Helpers.ToList(),
+                Book = _context.Book.ToList(),
+                Comment = _context.Comment.ToList(),
+                ContactInfo = _context.ContactInfo.ToList(),
+                Details = _context.Details.ToList(),
+                Features = _context.Features.ToList(),
+                Guest = _context.Guest.ToList(),
+                KeyPeople = _context.KeyPeople.ToList(),
+                Locations = _context.Locations.ToList(),
+                Menu = _context.Menu.ToList(),
+                Restaurant = _context.Restaurant.ToList(),
+                RestaurantCategory = _context.RestaurantCategory.ToList(),
             };
 
             return View(model);

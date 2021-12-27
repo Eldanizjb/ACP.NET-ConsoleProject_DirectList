@@ -14,7 +14,6 @@ namespace Consol_Project_DirectList.Areas.admin.Controllers
 {
     [Area("admin")]
     [Authorize]
-
     public class AccountController : Controller
     {
         private readonly AppDbContext _context;
@@ -62,7 +61,6 @@ namespace Consol_Project_DirectList.Areas.admin.Controllers
                     return View(model);
                 }
             }
-
             return View(model);
         }
         [AllowAnonymous]

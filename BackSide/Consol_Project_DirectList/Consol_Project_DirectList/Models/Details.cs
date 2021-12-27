@@ -28,16 +28,13 @@ namespace Consol_Project_DirectList.Models
         [ForeignKey("Locations")]
         public int LocationsId { get; set; }
         public Locations Locations { get; set; }
-
-        [ForeignKey("Menu")]
-        public int MenuId { get; set; }
-        public Menu Menu { get; set; }
-
-        [ForeignKey("RestaurantI")]
-        public int RestaurantId { get; set; }
+   
+        [ForeignKey("Comment")]
+        public int? CommentId { get; set; }
         public Comment Comment { get; set; }
 
         public List<Restaurant> Restaurant { get; set; }
+        public List<Menu> Menu { get; set; }
 
     }
 }

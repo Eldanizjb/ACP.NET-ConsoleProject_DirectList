@@ -23,7 +23,13 @@ namespace Consol_Project_DirectList.Controllers
         {
             VmAbout model = new VmAbout()
             {
-                Banner = _context.Banner.FirstOrDefault(b => b.Page == "About")
+                Banner = _context.Banner.FirstOrDefault(b => b.Page == "About"),
+                Sosial = _context.Sosial.ToList(),
+
+                Position = _context.Position.ToList(),
+                TagToContactPost =_context.TagToContactPost.ToList(),
+                ContactPost = _context.ContactPost.ToList(),
+                Working = _context.Working.ToList()
             };
             return View(model);
         }

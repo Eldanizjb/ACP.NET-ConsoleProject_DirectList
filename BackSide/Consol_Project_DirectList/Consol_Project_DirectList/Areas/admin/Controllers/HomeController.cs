@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace Consol_Project_DirectList.Areas.Admin.Controllers
 {
     [Area("admin")]
-    [Authorize(Roles = "Moderator, Customer")]
+   [Authorize(Roles = "Moderator, Customer")]
     public class HomeController : Controller
     {
         private readonly AppDbContext _context;

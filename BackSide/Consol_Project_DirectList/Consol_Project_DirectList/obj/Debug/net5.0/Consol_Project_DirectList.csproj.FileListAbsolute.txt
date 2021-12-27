@@ -155,9 +155,7 @@ C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\b
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Views\Blog\Details.cshtml.g.cs
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Views\Listings\Details.cshtml.g.cs
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\Account\Register.cshtml.g.cs
-C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\Shared\Error.cshtml.g.cs
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\Shared\_Layout.cshtml.g.cs
-C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\_ViewImports.cshtml.g.cs
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\_ViewStart.cshtml.g.cs
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\Account\Login.cshtml.g.cs

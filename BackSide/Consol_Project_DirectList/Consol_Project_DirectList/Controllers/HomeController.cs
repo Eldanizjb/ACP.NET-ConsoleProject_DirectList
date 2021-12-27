@@ -25,8 +25,15 @@ namespace Consol_Project_DirectList.Controllers
         {
             VmHome model = new VmHome
             {
-               
-            };
+                Sosial = _context.Sosial.ToList(),
+
+                Blog = _context.Blog.ToList(),
+                ContactPost = _context.ContactPost.ToList(),
+                Position = _context.Position.ToList(),
+                Restaurant = _context.Restaurant.ToList(),
+                TagToContactPost = _context.TagToContactPost.ToList(),
+                Vacation = _context.Vacation.ToList()
+           };
 
             //HttpContext.Session.SetString("IsAlive", "s;kfjng;frvjskdfnb");
             //CookieOptions options = new CookieOptions()

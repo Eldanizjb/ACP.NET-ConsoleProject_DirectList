@@ -15,8 +15,18 @@ namespace Consol_Project_DirectList.Models
         [Key]
         public int Id { get; set; }
         [MaxLength(250)]
-        public string Name { get; set; }
+        public string MainImage { get; set; }
+        [NotMapped]
+        public IFormFile MainImageFile { get; set; }
+        [MaxLength(250)]
+        public string Fullname { get; set; }
 
+        [MaxLength(30)]
+        public string Phone { get; set; }
+        [MaxLength(50)]
+        public string Logins { get; set; }
+        [MaxLength(50)]
+        public string Email { get; set; }
         public List<Details> Details { get; set; }
 
     }

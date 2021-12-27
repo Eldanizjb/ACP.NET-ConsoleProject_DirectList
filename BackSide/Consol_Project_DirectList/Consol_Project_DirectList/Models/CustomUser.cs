@@ -20,6 +20,10 @@ namespace Consol_Project_DirectList.Models
         public string Name { get; set; }
         [MaxLength(250)]
         public string Surname { get; set; }
+
+        [MaxLength(1000)]
+        public string Review { get; set; }
+        
         public DateTime CreateDate { get; set; }
         [NotMapped]
         public string RoleId { get; set; }

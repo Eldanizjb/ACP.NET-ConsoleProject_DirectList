@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Consol_Project_DirectList.Areas.admin.Controllers
 {
     [Area("Admin")]
-    [Authorize(Roles = "Moderator")]
+   [Authorize(Roles = "Moderator")]
     public class ListingsController : Controller
     {
         public IActionResult Index()

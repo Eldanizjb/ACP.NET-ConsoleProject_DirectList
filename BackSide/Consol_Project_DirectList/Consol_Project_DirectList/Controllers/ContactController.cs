@@ -20,8 +20,11 @@ namespace Consol_Project_DirectList.Controllers
         {
             VmContact model = new VmContact()
             {
-                Banner = _context.Banner.FirstOrDefault(b => b.Page == "Contact")
-            };
+                Banner = _context.Banner.FirstOrDefault(b => b.Page == "Contact"),
+                Sosial = _context.Sosial.ToList(),
+
+                Message = _context.Message.ToList(),
+            };   
             return View(model);
         }
     }

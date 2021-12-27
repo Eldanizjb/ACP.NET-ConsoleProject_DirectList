@@ -4,14 +4,16 @@ using Consol_Project_DirectList.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Consol_Project_DirectList.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20211227164715_MenuTableUpdated")]
+    partial class MenuTableUpdated
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -267,9 +269,15 @@ namespace Consol_Project_DirectList.Migrations
                     b.Property<int>("LocationsId")
                         .HasColumnType("int");
 
+                    b.Property<int>("MenuId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
+
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -280,6 +288,8 @@ namespace Consol_Project_DirectList.Migrations
                     b.HasIndex("KeyPeopleId");
 
                     b.HasIndex("LocationsId");
+
+                    b.HasIndex("MenuId");
 
                     b.ToTable("Details");
                 });
@@ -348,25 +358,9 @@ namespace Consol_Project_DirectList.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Email")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("Fullname")
+                    b.Property<string>("Name")
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("Logins")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("MainImage")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("Phone")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
 
                     b.HasKey("Id");
 
@@ -400,9 +394,6 @@ namespace Consol_Project_DirectList.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
-                    b.Property<int?>("DetailsId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
@@ -411,8 +402,6 @@ namespace Consol_Project_DirectList.Migrations
                         .HasColumnType("money");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("DetailsId");
 
                     b.ToTable("Menu");
                 });
@@ -900,10 +889,6 @@ namespace Consol_Project_DirectList.Migrations
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<string>("Review")
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
-
                     b.Property<string>("Surname")
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
@@ -991,11 +976,19 @@ namespace Consol_Project_DirectList.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Consol_Project_DirectList.Models.Menu", "Menu")
+                        .WithMany("Details")
+                        .HasForeignKey("MenuId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Comment");
 
                     b.Navigation("Helpers");
 
                     b.Navigation("Locations");
+
+                    b.Navigation("Menu");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Features", b =>
@@ -1018,15 +1011,6 @@ namespace Consol_Project_DirectList.Migrations
                         .IsRequired();
 
                     b.Navigation("Book");
-                });
-
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Menu", b =>
-                {
-                    b.HasOne("Consol_Project_DirectList.Models.Details", "Details")
-                        .WithMany("Menu")
-                        .HasForeignKey("DetailsId");
-
-                    b.Navigation("Details");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Restaurant", b =>
@@ -1153,8 +1137,6 @@ namespace Consol_Project_DirectList.Migrations
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Details", b =>
                 {
-                    b.Navigation("Menu");
-
                     b.Navigation("Restaurant");
                 });
 
@@ -1173,6 +1155,11 @@ namespace Consol_Project_DirectList.Migrations
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Locations", b =>
+                {
+                    b.Navigation("Details");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.Menu", b =>
                 {
                     b.Navigation("Details");
                 });

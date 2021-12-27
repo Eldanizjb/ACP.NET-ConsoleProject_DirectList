@@ -24,9 +24,14 @@ namespace Consol_Project_DirectList.Controllers
             VmBlog model = new VmBlog()
             {
                 Banner = _context.Banner.FirstOrDefault(b => b.Page == "Blog"),
+                Sosial = _context.Sosial.ToList(),
 
+                Blog = _context.Blog.ToList(),
+                Comenter = _context.Comenter.ToList(),
+                Comment = _context.Comment.ToList(),
+                CustomUser = _context.CustomUser.ToList()
 
-            };
+    };
 
             return View(model);
         }
@@ -36,9 +41,10 @@ namespace Consol_Project_DirectList.Controllers
             VmBlog model = new VmBlog()
             {
                 Banner = _context.Banner.FirstOrDefault(b => b.Page == "BlogDetails"),
-
-
-
+                Blog = _context.Blog.ToList(),
+                Comenter = _context.Comenter.ToList(),
+                Comment = _context.Comment.ToList(),
+                CustomUser = _context.CustomUser.ToList()
             };
 
             return View(model);
