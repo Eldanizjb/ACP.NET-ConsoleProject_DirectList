@@ -15,7 +15,8 @@ namespace Consol_Project_DirectList.Data
 
         }
 
-        public DbSet<About> About { get; set; }
+        public DbSet<Helper> Helpers { get; set; }
+        public DbSet<Banner> Banner { get; set; }
         public DbSet<Blog> Blog { get; set; }
         public DbSet<Book> Book { get; set; }
         public DbSet<Comenter> Comenter { get; set; }

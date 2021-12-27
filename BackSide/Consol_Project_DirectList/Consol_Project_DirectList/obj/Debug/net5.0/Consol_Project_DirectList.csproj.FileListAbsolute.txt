@@ -114,7 +114,6 @@ C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\o
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\ref\Consol_Project_DirectList.dll
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Consol_Project_DirectList.pdb
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Consol_Project_DirectList.genruntimeconfig.cache
-C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Views\About\Index.cshtml.g.cs
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Views\Blog\Index.cshtml.g.cs
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Views\Contact\Index.cshtml.g.cs
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Views\Listings\Index.cshtml.g.cs
@@ -167,3 +166,8 @@ C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\o
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\Account\Users.cshtml.g.cs
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\Account\UpdateUser.cshtml.g.cs
 C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\Home\Index.cshtml.g.cs
+C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Views\About\Index.cshtml.g.cs
+C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\Blog\Index.cshtml.g.cs
+C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\Banner\Index.cshtml.g.cs
+C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\Listings\Index.cshtml.g.cs
+C:\Users\ACER\source\repos\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Views\Shared\_BannerPartial.cshtml.g.cs

@@ -1,28 +1,12 @@
-﻿
+﻿@model VmAbout
+
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "About Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 }
 <div class="main-wrapper">
-    <div id="titlebar" class="gradient">
-        <div class="title-bar-inner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>About Us</h2>
-                        <span>Explore your search places</span>
-                        <!-- Breadcrumbs -->
-                        <nav id="breadcrumbs">
-                            <ul>
-                                <li><a>Home</a></li>
-                                <li>About Us</li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="title-overlay"></div>
-    </div>
+    <partial name="_BannerPartial" model="Model.Banner" />  
     <div class="content pt-0">
         <div class="about-wrapper">
             <div class="block-space">

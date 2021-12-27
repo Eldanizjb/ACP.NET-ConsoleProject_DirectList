@@ -1,32 +1,14 @@
-﻿
+﻿@model VmBlog
+
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "BlogDetails Details ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
 
 }
 
 <div class="main-wrapper">
-    <!--Title Bar -->
-    <div id="titlebar" class="gradient">
-        <div class="title-bar-inner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>Blog Detail</h2>
-                        <span>Explore your search places</span>
-                        <!-- Breadcrumbs -->
-                        <nav id="breadcrumbs">
-                            <ul>
-                                <li><a>Home</a></li>
-                                <li>Blog</li>
-                                <li>Detail</li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="title-overlay"></div>
-    </div>
+    <partial name="_BannerPartial" model="Model.Banner" />
     <!-- Content -->
     <div class="content">
         <div class="container">

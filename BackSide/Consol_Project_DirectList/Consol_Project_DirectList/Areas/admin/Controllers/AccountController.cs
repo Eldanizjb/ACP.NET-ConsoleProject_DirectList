@@ -38,7 +38,7 @@ namespace Consol_Project_DirectList.Areas.admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                CustomUser newUser = new CustomUser()
+                CustomUser newUsers = new CustomUser()
                 {
                     Name = model.Name,
                     Surname = model.Surname,
@@ -46,10 +46,10 @@ namespace Consol_Project_DirectList.Areas.admin.Controllers
                     UserName = model.Email,
                     CreateDate = DateTime.Now
                 };
-                var result = await _userManager.CreateAsync(newUser, model.Password);
+                var result = await _userManager.CreateAsync(newUsers, model.Password);
                 if (result.Succeeded)
                 {
-                    await _signInManager.SignInAsync(newUser, false);
+                    await _signInManager.SignInAsync(newUsers, false);
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -100,11 +100,11 @@ namespace Consol_Project_DirectList.Areas.admin.Controllers
 
         public IActionResult Users()
         {
-            VmUser model = new VmUser();
-            model.CustomUsers = _context.CustomUser.ToList();
-            model.Roles = _context.Roles.ToList();
-            model.UserRoles = _context.UserRoles.ToList();
-            return View(model);
+            VmUser models = new VmUser();
+            models.CustomUsers = _context.CustomUser.ToList();
+            models.Roles = _context.Roles.ToList();
+            models.UserRoles = _context.UserRoles.ToList();
+            return View(models);
         }
 
         public IActionResult UpdateUser(string id)

@@ -1,31 +1,12 @@
-﻿
-@{
-    ViewData["Title"] = "Listining Index";
+﻿@model VmListings
 
+@{
+    ViewData["Title"] = "Listing Index";
 }
 
 <div class="main-wrapper">
-    <!--Title Bar -->
-    <div id="titlebar" class="gradient">
-        <div class="title-bar-inner">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>Grid Layout</h2>
-                        <span>Explore New Places</span>
-                        <!-- Breadcrumbs -->
-                        <nav id="breadcrumbs">
-                            <ul>
-                                <li><a>Home</a></li>
-                                <li>Listings</li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="title-overlay"></div>
-    </div>
+    <partial name="_BannerPartial" model="Model.Banner" />
+
     <!-- Content -->
     <div class="content">
         <div class="container">

@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Consol_Project_DirectList.Models
 {
-    public class CustomUser : IdentityUser
+    public class CustomUser :IdentityUser
     {
         [MaxLength(250)]
         public string MainImage { get; set; }

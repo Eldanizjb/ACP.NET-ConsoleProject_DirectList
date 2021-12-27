@@ -19,9 +19,9 @@ namespace Consol_Project_DirectList.Models
         [MaxLength(50)]
         public string Phone { get; set; }
 
-        [ForeignKey("About")]
-        public int AboutId { get; set; }
-        public About About { get; set; }
+        [ForeignKey("Helpers")]
+        public int HelperId { get; set; }
+        public Helper Helpers { get; set; }
 
     }
 }

@@ -21,9 +21,9 @@ namespace Consol_Project_DirectList.Models
         [NotMapped]
         public IFormFile IconFile { get; set; }
 
-        [ForeignKey("About")]
-        public int AboutId { get; set; }
-        public About About { get; set; }
+        [ForeignKey("Helpers")]
+        public int HelperId { get; set; }
+        public Helper Helpers { get; set; }
 
         [ForeignKey("Locations")]
         public int LocationsId { get; set; }

@@ -21,8 +21,12 @@ namespace Consol_Project_DirectList.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
-           
-            return View();
+            VmLayout model = new VmLayout()
+            {
+                Sosial = _context.Sosial.ToList(),
+                Setting = _context.Setting.FirstOrDefault()
+            };
+            return View(model);
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Consol_Project_DirectList.Models
         [NotMapped]
         public IFormFile LogoFile { get; set; }
         [MaxLength(500)]
-        public string About { get; set; }
+        public string SiteInfo { get; set; }
         [MaxLength(500)]
         public string Adresses { get; set; }
         [MaxLength(30)]

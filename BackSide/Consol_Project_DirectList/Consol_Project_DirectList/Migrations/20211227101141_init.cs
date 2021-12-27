@@ -8,19 +8,6 @@ namespace Consol_Project_DirectList.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "About",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Text = table.Column<string>(type: "ntext", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_About", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -65,6 +52,22 @@ namespace Consol_Project_DirectList.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Banner",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Home = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Suptitle = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    Title = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    Page = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Banner", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Comenter",
                 columns: table => new
                 {
@@ -96,6 +99,19 @@ namespace Consol_Project_DirectList.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ContactPost", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Helpers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Content = table.Column<string>(type: "ntext", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Helpers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -189,7 +205,7 @@ namespace Consol_Project_DirectList.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Logo = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    About = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    SiteInfo = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     Adresses = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
                     Phone = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
@@ -247,47 +263,6 @@ namespace Consol_Project_DirectList.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Working", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ContactInfo",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
-                    Phone = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    AboutId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ContactInfo", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ContactInfo_About_AboutId",
-                        column: x => x.AboutId,
-                        principalTable: "About",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Features",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
-                    AboutId = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Features", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Features_About_AboutId",
-                        column: x => x.AboutId,
-                        principalTable: "About",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -420,6 +395,47 @@ namespace Consol_Project_DirectList.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ContactInfo",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    Phone = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    HelperId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ContactInfo", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ContactInfo_Helpers_HelperId",
+                        column: x => x.HelperId,
+                        principalTable: "Helpers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Features",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    HelperId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Features", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Features_Helpers_HelperId",
+                        column: x => x.HelperId,
+                        principalTable: "Helpers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "TagToContactPost",
                 columns: table => new
                 {
@@ -493,7 +509,7 @@ namespace Consol_Project_DirectList.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
                     Icon = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    AboutId = table.Column<int>(type: "int", nullable: false),
+                    HelperId = table.Column<int>(type: "int", nullable: false),
                     LocationsId = table.Column<int>(type: "int", nullable: false),
                     MenuId = table.Column<int>(type: "int", nullable: false),
                     RestaurantId = table.Column<int>(type: "int", nullable: false),
@@ -504,17 +520,17 @@ namespace Consol_Project_DirectList.Migrations
                 {
                     table.PrimaryKey("PK_Details", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Details_About_AboutId",
-                        column: x => x.AboutId,
-                        principalTable: "About",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_Details_Comment_CommentId",
                         column: x => x.CommentId,
                         principalTable: "Comment",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Details_Helpers_HelperId",
+                        column: x => x.HelperId,
+                        principalTable: "Helpers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Details_KeyPeople_KeyPeopleId",
                         column: x => x.KeyPeopleId,
@@ -680,19 +696,19 @@ namespace Consol_Project_DirectList.Migrations
                 column: "CommentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ContactInfo_AboutId",
+                name: "IX_ContactInfo_HelperId",
                 table: "ContactInfo",
-                column: "AboutId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Details_AboutId",
-                table: "Details",
-                column: "AboutId");
+                column: "HelperId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Details_CommentId",
                 table: "Details",
                 column: "CommentId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Details_HelperId",
+                table: "Details",
+                column: "HelperId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Details_KeyPeopleId",
@@ -710,9 +726,9 @@ namespace Consol_Project_DirectList.Migrations
                 column: "MenuId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Features_AboutId",
+                name: "IX_Features_HelperId",
                 table: "Features",
-                column: "AboutId");
+                column: "HelperId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Guest_BookId",
@@ -763,6 +779,9 @@ namespace Consol_Project_DirectList.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Banner");
+
+            migrationBuilder.DropTable(
                 name: "ContactInfo");
 
             migrationBuilder.DropTable(
@@ -811,10 +830,10 @@ namespace Consol_Project_DirectList.Migrations
                 name: "RestaurantCategory");
 
             migrationBuilder.DropTable(
-                name: "About");
+                name: "Comment");
 
             migrationBuilder.DropTable(
-                name: "Comment");
+                name: "Helpers");
 
             migrationBuilder.DropTable(
                 name: "KeyPeople");

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Consol_Project_DirectList.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211226134312_init")]
+    [Migration("20211227101141_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,19 +21,32 @@ namespace Consol_Project_DirectList.Migrations
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.About", b =>
+            modelBuilder.Entity("Consol_Project_DirectList.Models.Banner", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Text")
-                        .HasColumnType("ntext");
+                    b.Property<string>("Home")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Page")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Suptitle")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Title")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("About");
+                    b.ToTable("Banner");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Blog", b =>
@@ -187,7 +200,7 @@ namespace Consol_Project_DirectList.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AboutId")
+                    b.Property<int>("HelperId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -200,7 +213,7 @@ namespace Consol_Project_DirectList.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AboutId");
+                    b.HasIndex("HelperId");
 
                     b.ToTable("ContactInfo");
                 });
@@ -236,10 +249,10 @@ namespace Consol_Project_DirectList.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AboutId")
+                    b.Property<int?>("CommentId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CommentId")
+                    b.Property<int>("HelperId")
                         .HasColumnType("int");
 
                     b.Property<string>("Icon")
@@ -264,9 +277,9 @@ namespace Consol_Project_DirectList.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AboutId");
-
                     b.HasIndex("CommentId");
+
+                    b.HasIndex("HelperId");
 
                     b.HasIndex("KeyPeopleId");
 
@@ -284,7 +297,7 @@ namespace Consol_Project_DirectList.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("AboutId")
+                    b.Property<int>("HelperId")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
@@ -293,7 +306,7 @@ namespace Consol_Project_DirectList.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AboutId");
+                    b.HasIndex("HelperId");
 
                     b.ToTable("Features");
                 });
@@ -317,6 +330,21 @@ namespace Consol_Project_DirectList.Migrations
                     b.HasIndex("BookId");
 
                     b.ToTable("Guest");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.Helper", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Content")
+                        .HasColumnType("ntext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Helpers");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.KeyPeople", b =>
@@ -498,10 +526,6 @@ namespace Consol_Project_DirectList.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("About")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
                     b.Property<string>("Adresses")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
@@ -527,6 +551,10 @@ namespace Consol_Project_DirectList.Migrations
                         .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("Qoal")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("SiteInfo")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -909,26 +937,26 @@ namespace Consol_Project_DirectList.Migrations
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.ContactInfo", b =>
                 {
-                    b.HasOne("Consol_Project_DirectList.Models.About", "About")
+                    b.HasOne("Consol_Project_DirectList.Models.Helper", "Helpers")
                         .WithMany("ContactInfo")
-                        .HasForeignKey("AboutId")
+                        .HasForeignKey("HelperId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("About");
+                    b.Navigation("Helpers");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Details", b =>
                 {
-                    b.HasOne("Consol_Project_DirectList.Models.About", "About")
-                        .WithMany("Details")
-                        .HasForeignKey("AboutId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("Consol_Project_DirectList.Models.Comment", "Comment")
                         .WithMany("Details")
                         .HasForeignKey("CommentId");
+
+                    b.HasOne("Consol_Project_DirectList.Models.Helper", "Helpers")
+                        .WithMany("Details")
+                        .HasForeignKey("HelperId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Consol_Project_DirectList.Models.KeyPeople", null)
                         .WithMany("Details")
@@ -946,9 +974,9 @@ namespace Consol_Project_DirectList.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("About");
-
                     b.Navigation("Comment");
+
+                    b.Navigation("Helpers");
 
                     b.Navigation("Locations");
 
@@ -957,13 +985,13 @@ namespace Consol_Project_DirectList.Migrations
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Features", b =>
                 {
-                    b.HasOne("Consol_Project_DirectList.Models.About", "About")
+                    b.HasOne("Consol_Project_DirectList.Models.Helper", "Helpers")
                         .WithMany("Features")
-                        .HasForeignKey("AboutId")
+                        .HasForeignKey("HelperId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("About");
+                    b.Navigation("Helpers");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Guest", b =>
@@ -1074,15 +1102,6 @@ namespace Consol_Project_DirectList.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.About", b =>
-                {
-                    b.Navigation("ContactInfo");
-
-                    b.Navigation("Details");
-
-                    b.Navigation("Features");
-                });
-
             modelBuilder.Entity("Consol_Project_DirectList.Models.Blog", b =>
                 {
                     b.Navigation("Comment");
@@ -1111,6 +1130,15 @@ namespace Consol_Project_DirectList.Migrations
             modelBuilder.Entity("Consol_Project_DirectList.Models.Details", b =>
                 {
                     b.Navigation("Restaurant");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.Helper", b =>
+                {
+                    b.Navigation("ContactInfo");
+
+                    b.Navigation("Details");
+
+                    b.Navigation("Features");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.KeyPeople", b =>

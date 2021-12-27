@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Consol_Project_DirectList.Data;
+using Consol_Project_DirectList.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +10,19 @@ namespace Consol_Project_DirectList.Controllers
 {
     public class ContactController : Controller
     {
+        private readonly AppDbContext _context;
+
+        public ContactController(AppDbContext context)
+        {
+            _context = context;
+        }
         public IActionResult Index()
         {
-            return View();
+            VmContact model = new VmContact()
+            {
+                Banner = _context.Banner.FirstOrDefault(b => b.Page == "Contact")
+            };
+            return View(model);
         }
     }
 }

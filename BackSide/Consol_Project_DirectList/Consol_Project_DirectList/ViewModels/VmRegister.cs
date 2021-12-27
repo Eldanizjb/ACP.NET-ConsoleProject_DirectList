@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using Consol_Project_DirectList.Models;
 
 namespace Consol_Project_DirectList.ViewModels
 {

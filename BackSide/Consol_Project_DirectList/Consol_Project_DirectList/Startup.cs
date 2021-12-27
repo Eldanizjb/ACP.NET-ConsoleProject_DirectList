@@ -31,7 +31,7 @@ namespace Consol_Project_DirectList
             services.AddControllersWithViews();
             services.AddSession(option =>
             {
-                option.IdleTimeout = TimeSpan.FromSeconds(20);
+                option.IdleTimeout = TimeSpan.FromSeconds(30);
             });
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("Consol_Project_DirectListCS")));
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
