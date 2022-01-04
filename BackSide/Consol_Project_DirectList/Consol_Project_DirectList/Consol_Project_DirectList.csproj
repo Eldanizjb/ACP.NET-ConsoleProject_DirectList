@@ -15,8 +15,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\admin\Data\" />
-    <Folder Include="Areas\admin\Models\" />
+    <Folder Include="wwwroot\Uploads\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Areas\admin\Views\Banner\Index.cshtml" />
+    <None Include="Areas\admin\Views\Blog\Index.cshtml" />
+    <None Include="Areas\admin\Views\Home\Index.cshtml" />
+    <None Include="Areas\admin\Views\Listings\Index.cshtml" />
   </ItemGroup>
 
 </Project>

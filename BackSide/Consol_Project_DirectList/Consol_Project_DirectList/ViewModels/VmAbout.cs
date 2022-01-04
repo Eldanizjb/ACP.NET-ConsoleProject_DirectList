@@ -8,9 +8,11 @@ namespace Consol_Project_DirectList.ViewModels
 {
     public class VmAbout : VmLayout
     {
-         public List<Position> Position { get; set; }
-         public List<TagToContactPost> TagToContactPost { get; set; }
-         public List<ContactPost> ContactPost { get; set; }
-         public List<Working> Working { get; set; }
+        public List<TagToTeamSosial> TagToTeamSosial { get; set; }
+        public List<Team> Team { get; set; }
+        public List<TeamSosial> TeamSosial { get; set; }
+        public List<WorkingProcess> Working { get; set; }
+
+
     }
 }

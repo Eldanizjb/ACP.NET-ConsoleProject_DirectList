@@ -19,6 +19,28 @@ namespace Consol_Project_DirectList.Migrations
                 .HasAnnotation("ProductVersion", "5.0.12")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Consol_Project_DirectList.Models.AdministrationToRestaurant", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("RestaurantAdministrationId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RestaurantAdministrationId");
+
+                    b.HasIndex("RestaurantId");
+
+                    b.ToTable("AdministrationToRestaurant");
+                });
+
             modelBuilder.Entity("Consol_Project_DirectList.Models.Banner", b =>
                 {
                     b.Property<int>("Id")
@@ -80,26 +102,6 @@ namespace Consol_Project_DirectList.Migrations
                     b.HasIndex("CustomUserId");
 
                     b.ToTable("Blog");
-                });
-
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Book", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreateDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("RestaurantId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RestaurantId");
-
-                    b.ToTable("Book");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Comenter", b =>
@@ -176,6 +178,9 @@ namespace Consol_Project_DirectList.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Subject")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
@@ -192,117 +197,53 @@ namespace Consol_Project_DirectList.Migrations
 
                     b.HasIndex("CommentId");
 
+                    b.HasIndex("RestaurantId");
+
                     b.ToTable("Comment");
                 });
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.ContactInfo", b =>
+            modelBuilder.Entity("Consol_Project_DirectList.Models.ContactPhoneToRestaurant", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("HelperId")
+                    b.Property<int>("RestaurantContactPhoneId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("Phone")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HelperId");
+                    b.HasIndex("RestaurantContactPhoneId");
 
-                    b.ToTable("ContactInfo");
+                    b.HasIndex("RestaurantId");
+
+                    b.ToTable("ContactPhoneToRestaurant");
                 });
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.ContactPost", b =>
+            modelBuilder.Entity("Consol_Project_DirectList.Models.FeatureToRestaurant", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Icon")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<int>("RestaurantFeaturesId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Link")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<int>("RestaurantId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("ContactPost");
-                });
+                    b.HasIndex("RestaurantFeaturesId");
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Details", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.HasIndex("RestaurantId");
 
-                    b.Property<int?>("CommentId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("HelperId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Icon")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<int?>("KeyPeopleId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LocationsId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CommentId");
-
-                    b.HasIndex("HelperId");
-
-                    b.HasIndex("KeyPeopleId");
-
-                    b.HasIndex("LocationsId");
-
-                    b.ToTable("Details");
-                });
-
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Features", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("HelperId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("HelperId");
-
-                    b.ToTable("Features");
+                    b.ToTable("FeatureToRestaurant");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Guest", b =>
@@ -312,109 +253,35 @@ namespace Consol_Project_DirectList.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BookId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BookId");
 
                     b.ToTable("Guest");
                 });
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Helper", b =>
+            modelBuilder.Entity("Consol_Project_DirectList.Models.MenuToRestaurant", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Content")
-                        .HasColumnType("ntext");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Helpers");
-                });
-
-            modelBuilder.Entity("Consol_Project_DirectList.Models.KeyPeople", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Email")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("Fullname")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("Logins")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("MainImage")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<string>("Phone")
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("KeyPeople");
-                });
-
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Locations", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Link")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Locations");
-                });
-
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Menu", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Detail")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<int?>("DetailsId")
+                    b.Property<int>("RestaurantId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Name")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("money");
+                    b.Property<int>("RestaurantMenuId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DetailsId");
+                    b.HasIndex("RestaurantId");
 
-                    b.ToTable("Menu");
+                    b.HasIndex("RestaurantMenuId");
+
+                    b.ToTable("MenuToRestaurant");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Message", b =>
@@ -444,28 +311,51 @@ namespace Consol_Project_DirectList.Migrations
                     b.ToTable("Message");
                 });
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Position", b =>
+            modelBuilder.Entity("Consol_Project_DirectList.Models.Order", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Fullname")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                    b.Property<DateTime>("CreateDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("Image")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
+                    b.Property<byte>("GuestCount")
+                        .HasColumnType("tinyint");
 
-                    b.Property<string>("Positions")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                    b.Property<int?>("GuestId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("IdentityCard")
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Phone")
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<int?>("RestaurantId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Surname")
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Position");
+                    b.HasIndex("GuestId");
+
+                    b.HasIndex("RestaurantId");
+
+                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Restaurant", b =>
@@ -475,18 +365,21 @@ namespace Consol_Project_DirectList.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("About")
+                        .HasColumnType("ntext");
+
                     b.Property<string>("Adresses")
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
+                    b.Property<short>("Capacity")
+                        .HasColumnType("smallint");
+
+                    b.Property<DateTime>("ClosingTime")
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("DetailsId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Icon")
                         .HasMaxLength(100)
@@ -496,30 +389,73 @@ namespace Consol_Project_DirectList.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("KeyPeopleId")
-                        .HasColumnType("int");
+                    b.Property<string>("Location")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Locationlink")
+                        .HasMaxLength(2000)
+                        .HasColumnType("nvarchar(2000)");
 
                     b.Property<string>("Name")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<DateTime>("OpeningTime")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Order")
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<int?>("RestaurantCategoryId")
+                        .HasColumnType("int");
 
                     b.Property<string>("SmallImage")
                         .HasMaxLength(250)
                         .HasColumnType("nvarchar(250)");
 
+                    b.Property<string>("Website")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("DetailsId");
-
-                    b.HasIndex("KeyPeopleId");
+                    b.HasIndex("RestaurantCategoryId");
 
                     b.ToTable("Restaurant");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.RestaurantAdministration", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Fullname")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("Logins")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("MainImage")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("Phone")
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RestaurantAdministration");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.RestaurantCategory", b =>
@@ -536,6 +472,81 @@ namespace Consol_Project_DirectList.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("RestaurantCategory");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.RestaurantContactPhone", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("Phone")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RestaurantContactPhone");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.RestaurantFeatures", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RestaurantFeatures");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.RestaurantMenu", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Detail")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("money");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RestaurantMenu");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.RestaurantTag", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RestaurantTag");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Setting", b =>
@@ -589,6 +600,10 @@ namespace Consol_Project_DirectList.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Color")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
                     b.Property<string>("Icon")
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
@@ -606,29 +621,104 @@ namespace Consol_Project_DirectList.Migrations
                     b.ToTable("Sosial");
                 });
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.TagToContactPost", b =>
+            modelBuilder.Entity("Consol_Project_DirectList.Models.TagToRestaurant", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("ContactPostId")
+                    b.Property<int>("RestaurantId")
                         .HasColumnType("int");
 
-                    b.Property<int>("PositionId")
+                    b.Property<int>("RestaurantTagId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ContactPostId");
+                    b.HasIndex("RestaurantId");
 
-                    b.HasIndex("PositionId");
+                    b.HasIndex("RestaurantTagId");
 
-                    b.ToTable("TagToContactPost");
+                    b.ToTable("TagToRestaurant");
                 });
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Vacation", b =>
+            modelBuilder.Entity("Consol_Project_DirectList.Models.TagToTeamSosial", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("TeamId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TeamSosialId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TeamId");
+
+                    b.HasIndex("TeamSosialId");
+
+                    b.ToTable("TagToTeamSosial");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.Team", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Fullname")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Image")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("Position")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Team");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.TeamSosial", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Icon")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("Link")
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int?>("TeamId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TeamId");
+
+                    b.ToTable("TeamSosial");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.Vacations", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -652,7 +742,7 @@ namespace Consol_Project_DirectList.Migrations
                     b.ToTable("Vacation");
                 });
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Working", b =>
+            modelBuilder.Entity("Consol_Project_DirectList.Models.WorkingProcess", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -911,6 +1001,25 @@ namespace Consol_Project_DirectList.Migrations
                     b.HasDiscriminator().HasValue("CustomUser");
                 });
 
+            modelBuilder.Entity("Consol_Project_DirectList.Models.AdministrationToRestaurant", b =>
+                {
+                    b.HasOne("Consol_Project_DirectList.Models.RestaurantAdministration", "RestaurantAdministration")
+                        .WithMany("AdministrationToRestaurant")
+                        .HasForeignKey("RestaurantAdministrationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Consol_Project_DirectList.Models.Restaurant", "Restaurant")
+                        .WithMany("AdministrationToRestaurant")
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Restaurant");
+
+                    b.Navigation("RestaurantAdministration");
+                });
+
             modelBuilder.Entity("Consol_Project_DirectList.Models.Blog", b =>
                 {
                     b.HasOne("Consol_Project_DirectList.Models.CustomUser", "CustomUser")
@@ -918,17 +1027,6 @@ namespace Consol_Project_DirectList.Migrations
                         .HasForeignKey("CustomUserId");
 
                     b.Navigation("CustomUser");
-                });
-
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Book", b =>
-                {
-                    b.HasOne("Consol_Project_DirectList.Models.Restaurant", "Restaurant")
-                        .WithMany("Book")
-                        .HasForeignKey("RestaurantId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Restaurant");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Comment", b =>
@@ -951,128 +1049,145 @@ namespace Consol_Project_DirectList.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Consol_Project_DirectList.Models.Restaurant", "Restaurant")
+                        .WithMany("Comments")
+                        .HasForeignKey("RestaurantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Blog");
 
                     b.Navigation("Comenter");
 
                     b.Navigation("ParentComment");
+
+                    b.Navigation("Restaurant");
                 });
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.ContactInfo", b =>
+            modelBuilder.Entity("Consol_Project_DirectList.Models.ContactPhoneToRestaurant", b =>
                 {
-                    b.HasOne("Consol_Project_DirectList.Models.Helper", "Helpers")
-                        .WithMany("ContactInfo")
-                        .HasForeignKey("HelperId")
+                    b.HasOne("Consol_Project_DirectList.Models.RestaurantContactPhone", "RestaurantContactPhone")
+                        .WithMany("ContactPhoneToRestaurant")
+                        .HasForeignKey("RestaurantContactPhoneId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Helpers");
-                });
-
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Details", b =>
-                {
-                    b.HasOne("Consol_Project_DirectList.Models.Comment", "Comment")
-                        .WithMany("Details")
-                        .HasForeignKey("CommentId");
-
-                    b.HasOne("Consol_Project_DirectList.Models.Helper", "Helpers")
-                        .WithMany("Details")
-                        .HasForeignKey("HelperId")
+                    b.HasOne("Consol_Project_DirectList.Models.Restaurant", "Restaurant")
+                        .WithMany("ContactPhoneToRestaurant")
+                        .HasForeignKey("RestaurantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Consol_Project_DirectList.Models.KeyPeople", null)
-                        .WithMany("Details")
-                        .HasForeignKey("KeyPeopleId");
+                    b.Navigation("Restaurant");
 
-                    b.HasOne("Consol_Project_DirectList.Models.Locations", "Locations")
-                        .WithMany("Details")
-                        .HasForeignKey("LocationsId")
+                    b.Navigation("RestaurantContactPhone");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.FeatureToRestaurant", b =>
+                {
+                    b.HasOne("Consol_Project_DirectList.Models.RestaurantFeatures", "RestaurantFeatures")
+                        .WithMany("FeatureToRestaurant")
+                        .HasForeignKey("RestaurantFeaturesId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Comment");
-
-                    b.Navigation("Helpers");
-
-                    b.Navigation("Locations");
-                });
-
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Features", b =>
-                {
-                    b.HasOne("Consol_Project_DirectList.Models.Helper", "Helpers")
-                        .WithMany("Features")
-                        .HasForeignKey("HelperId")
+                    b.HasOne("Consol_Project_DirectList.Models.Restaurant", "Restaurant")
+                        .WithMany("FeatureToRestaurants")
+                        .HasForeignKey("RestaurantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Helpers");
+                    b.Navigation("Restaurant");
+
+                    b.Navigation("RestaurantFeatures");
                 });
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Guest", b =>
+            modelBuilder.Entity("Consol_Project_DirectList.Models.MenuToRestaurant", b =>
                 {
-                    b.HasOne("Consol_Project_DirectList.Models.Book", "Book")
-                        .WithMany("Guest")
-                        .HasForeignKey("BookId")
+                    b.HasOne("Consol_Project_DirectList.Models.Restaurant", "Restaurant")
+                        .WithMany("MenuToRestaurants")
+                        .HasForeignKey("RestaurantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Book");
+                    b.HasOne("Consol_Project_DirectList.Models.RestaurantMenu", "RestaurantMenu")
+                        .WithMany("MenuToRestaurant")
+                        .HasForeignKey("RestaurantMenuId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Restaurant");
+
+                    b.Navigation("RestaurantMenu");
                 });
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Menu", b =>
+            modelBuilder.Entity("Consol_Project_DirectList.Models.Order", b =>
                 {
-                    b.HasOne("Consol_Project_DirectList.Models.Details", "Details")
-                        .WithMany("Menu")
-                        .HasForeignKey("DetailsId");
+                    b.HasOne("Consol_Project_DirectList.Models.Guest", "Guest")
+                        .WithMany("Order")
+                        .HasForeignKey("GuestId");
 
-                    b.Navigation("Details");
+                    b.HasOne("Consol_Project_DirectList.Models.Restaurant", "Restaurant")
+                        .WithMany("Orders")
+                        .HasForeignKey("RestaurantId");
+
+                    b.Navigation("Guest");
+
+                    b.Navigation("Restaurant");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Restaurant", b =>
                 {
-                    b.HasOne("Consol_Project_DirectList.Models.RestaurantCategory", "RestaurantCategory")
+                    b.HasOne("Consol_Project_DirectList.Models.RestaurantCategory", null)
                         .WithMany("Restaurant")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Consol_Project_DirectList.Models.Details", "Details")
-                        .WithMany("Restaurant")
-                        .HasForeignKey("DetailsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Consol_Project_DirectList.Models.KeyPeople", "KeyPeople")
-                        .WithMany()
-                        .HasForeignKey("KeyPeopleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Details");
-
-                    b.Navigation("KeyPeople");
-
-                    b.Navigation("RestaurantCategory");
+                        .HasForeignKey("RestaurantCategoryId");
                 });
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.TagToContactPost", b =>
+            modelBuilder.Entity("Consol_Project_DirectList.Models.TagToRestaurant", b =>
                 {
-                    b.HasOne("Consol_Project_DirectList.Models.ContactPost", "ContactPost")
-                        .WithMany("TagToContactPost")
-                        .HasForeignKey("ContactPostId")
+                    b.HasOne("Consol_Project_DirectList.Models.Restaurant", "Restaurant")
+                        .WithMany("TagToRestaurant")
+                        .HasForeignKey("RestaurantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Consol_Project_DirectList.Models.Position", "Position")
-                        .WithMany("TagToContactPost")
-                        .HasForeignKey("PositionId")
+                    b.HasOne("Consol_Project_DirectList.Models.RestaurantTag", "RestaurantTag")
+                        .WithMany("TagToRestaurant")
+                        .HasForeignKey("RestaurantTagId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ContactPost");
+                    b.Navigation("Restaurant");
 
-                    b.Navigation("Position");
+                    b.Navigation("RestaurantTag");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.TagToTeamSosial", b =>
+                {
+                    b.HasOne("Consol_Project_DirectList.Models.Team", "Team")
+                        .WithMany("TagToTeamSosial")
+                        .HasForeignKey("TeamId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Consol_Project_DirectList.Models.TeamSosial", "TeamSosial")
+                        .WithMany("TagToTeamSosial")
+                        .HasForeignKey("TeamSosialId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Team");
+
+                    b.Navigation("TeamSosial");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.TeamSosial", b =>
+                {
+                    b.HasOne("Consol_Project_DirectList.Models.Team", "Team")
+                        .WithMany("TeamSosial")
+                        .HasForeignKey("TeamId");
+
+                    b.Navigation("Team");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -1131,65 +1246,73 @@ namespace Consol_Project_DirectList.Migrations
                     b.Navigation("Comment");
                 });
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Book", b =>
-                {
-                    b.Navigation("Guest");
-                });
-
             modelBuilder.Entity("Consol_Project_DirectList.Models.Comenter", b =>
                 {
                     b.Navigation("Comment");
                 });
 
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Comment", b =>
+            modelBuilder.Entity("Consol_Project_DirectList.Models.Guest", b =>
                 {
-                    b.Navigation("Details");
-                });
-
-            modelBuilder.Entity("Consol_Project_DirectList.Models.ContactPost", b =>
-                {
-                    b.Navigation("TagToContactPost");
-                });
-
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Details", b =>
-                {
-                    b.Navigation("Menu");
-
-                    b.Navigation("Restaurant");
-                });
-
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Helper", b =>
-                {
-                    b.Navigation("ContactInfo");
-
-                    b.Navigation("Details");
-
-                    b.Navigation("Features");
-                });
-
-            modelBuilder.Entity("Consol_Project_DirectList.Models.KeyPeople", b =>
-                {
-                    b.Navigation("Details");
-                });
-
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Locations", b =>
-                {
-                    b.Navigation("Details");
-                });
-
-            modelBuilder.Entity("Consol_Project_DirectList.Models.Position", b =>
-                {
-                    b.Navigation("TagToContactPost");
+                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.Restaurant", b =>
                 {
-                    b.Navigation("Book");
+                    b.Navigation("AdministrationToRestaurant");
+
+                    b.Navigation("Comments");
+
+                    b.Navigation("ContactPhoneToRestaurant");
+
+                    b.Navigation("FeatureToRestaurants");
+
+                    b.Navigation("MenuToRestaurants");
+
+                    b.Navigation("Orders");
+
+                    b.Navigation("TagToRestaurant");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.RestaurantAdministration", b =>
+                {
+                    b.Navigation("AdministrationToRestaurant");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.RestaurantCategory", b =>
                 {
                     b.Navigation("Restaurant");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.RestaurantContactPhone", b =>
+                {
+                    b.Navigation("ContactPhoneToRestaurant");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.RestaurantFeatures", b =>
+                {
+                    b.Navigation("FeatureToRestaurant");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.RestaurantMenu", b =>
+                {
+                    b.Navigation("MenuToRestaurant");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.RestaurantTag", b =>
+                {
+                    b.Navigation("TagToRestaurant");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.Team", b =>
+                {
+                    b.Navigation("TagToTeamSosial");
+
+                    b.Navigation("TeamSosial");
+                });
+
+            modelBuilder.Entity("Consol_Project_DirectList.Models.TeamSosial", b =>
+                {
+                    b.Navigation("TagToTeamSosial");
                 });
 
             modelBuilder.Entity("Consol_Project_DirectList.Models.CustomUser", b =>

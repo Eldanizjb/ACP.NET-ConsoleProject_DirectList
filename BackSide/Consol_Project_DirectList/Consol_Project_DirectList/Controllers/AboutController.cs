@@ -6,8 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
-
+using Microsoft.EntityFrameworkCore;
 
 namespace Consol_Project_DirectList.Controllers
 {
@@ -21,15 +20,12 @@ namespace Consol_Project_DirectList.Controllers
         }
         public IActionResult Index()
         {
-            VmAbout model = new VmAbout()
+            VmAbout model = new()
             {
                 Banner = _context.Banner.FirstOrDefault(b => b.Page == "About"),
                 Sosial = _context.Sosial.ToList(),
-
-                Position = _context.Position.ToList(),
-                TagToContactPost =_context.TagToContactPost.ToList(),
-                ContactPost = _context.ContactPost.ToList(),
-                Working = _context.Working.ToList()
+                Working = _context.Working.ToList(),
+                Team = _context.Team.OrderByDescending(d => d.Id).Include(tt => tt.TagToTeamSosial).ThenInclude(ts => ts.TeamSosial).ToList(),
             };
             return View(model);
         }

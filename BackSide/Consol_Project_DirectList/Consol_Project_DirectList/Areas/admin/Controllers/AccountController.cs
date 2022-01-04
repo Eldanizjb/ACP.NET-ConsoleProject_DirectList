@@ -37,7 +37,7 @@ namespace Consol_Project_DirectList.Areas.admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                CustomUser newUsers = new CustomUser()
+                CustomUser newUsers = new()
                 {
                     Name = model.Name,
                     Surname = model.Surname,
@@ -98,7 +98,7 @@ namespace Consol_Project_DirectList.Areas.admin.Controllers
 
         public IActionResult Users()
         {
-            VmUser models = new VmUser();
+            VmUser models = new();
             models.CustomUsers = _context.CustomUser.ToList();
             models.Roles = _context.Roles.ToList();
             models.UserRoles = _context.UserRoles.ToList();

@@ -8,10 +8,13 @@ namespace Consol_Project_DirectList.ViewModels
 {
     public class VmBlog : VmLayout
     {
+
         public List<Blog> Blog { get; set; }
         public List<Comenter> Comenter { get; set; }
         public List<Comment> Comment { get; set; }
         public List<CustomUser> CustomUser { get; set; }
-       
+        public Blog Blogin { get; set; }
+
+
     }
 }

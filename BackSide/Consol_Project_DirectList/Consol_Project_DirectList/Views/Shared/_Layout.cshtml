@@ -56,84 +56,10 @@
                         <div class="navbar-nav navbar-nav-hover align-items-lg-center ml-auto">
                             <nav id="navigation" class="style-1">
                                 <ul id="responsive">
-                                    <li>
-                                        <a class="current" asp-controller="Home" asp-action="Index">Home</a>
-
-                                    </li>
-                                    <li>
-                                        <a href="#">Listings</a>
-                                        <ul>
-                                            <li>
-                                                <a href="#">List Layout</a>
-                                                <ul>
-                                                    <li><a href="listings-list-with-sidebar.html">With Sidebar</a></li>
-                                                    <li><a asp-controller="Listings" asp-action="Index">Full Width</a></li>
-                                                    <li><a href="listings-list-full-width-map.html">Full Width + Map</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">Grid Layout</a>
-                                                <ul>
-                                                    <li><a href="listings-grid-with-sidebar.html">With Sidebar</a></li>
-                                                    <li><a href="listings-grid-full-width.html">Full Width</a></li>
-                                                    <li><a href="listings-grid-full-width-map.html">Full Width + Map</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">Half Screen Map</a>
-                                                <ul>
-                                                    <li><a href="listings-half-screen-map-list.html">Layout</a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <a href="#">Detail</a>
-                                                <ul>
-                                                    <li><a asp-controller="Listings" asp-action="Details">Details</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">User Panel</a>
-                                        <ul>
-                                            <li><a href="dashboard.html">Dashboard</a></li>
-                                            <li><a href="dashboard-messages.html">Messages</a></li>
-                                            <li><a href="dashboard-bookings.html">Bookings</a></li>
-                                            <li><a href="dashboard-reviews.html">Reviews</a></li>
-                                            <li><a href="dashboard-bookmarks.html">Bookmarks</a></li>
-                                            <li><a href="dashboard-listing.html">My Listings</a></li>
-                                            <li><a href="dashboard-add-listing.html">Add List</a></li>
-                                            <li><a href="dashboard-profile.html">Profile</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Pages</a>
-                                        <ul>
-                                            <li><a href="pricing.html">Pricing</a></li>
-                                            <li><a href="invoice.html">Invoice</a></li>
-                                            <li><a href="booking.html">Booking</a></li>
-                                            <li><a href="add-listing.html">Add Listing</a></li>
-                                            <li><a href="user-profile.html">Profile</a></li>
-                                            <li>
-                                                <a href="#">Blog</a>
-                                                <ul>
-                                                    <li><a asp-controller="Blog" asp-action="Index">List</a></li>
-                                                    <li><a asp-controller="Blog" asp-action="Details">Detail</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a asp-controller="About" asp-action="Index">About</a></li>
-                                            <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#">Session</a>
-                                        <ul>
-                                            <li><a href="login.html">Login</a></li>
-                                            <li><a href="register.html">Register</a></li>
-                                            <li><a href="forgot-password.html">Forgot Password</a></li>
-                                            <li><a href="comingsoon.html">Coming Soon</a></li>
-                                        </ul>
-                                    </li>
+                                    <li> <a class="current" asp-controller="Home" asp-action="Index">Home</a></li>
+                                    <li><a asp-controller="Listings" asp-action="Index">Restaurants</a></li>
+                                    <li><a asp-controller="Blog" asp-action="Index">Blog</a></li>
+                                    <li><a asp-controller="Contact" asp-action="Index">Contact</a></li>
                                 </ul>
                             </nav>
                             <div class="header-widget">
@@ -202,23 +128,23 @@
     <!-- Wrapper / End -->
     <!-- Scripts
          ================================================== -->
-    <script type="text/javascript" src="~/scripts/jquery-2.2.0.min.js"></script>
-    <script type="text/javascript" src="~/scripts/popper.min.js"></script>
-    <script type="text/javascript" src="~/scripts/bootstrap.min.js"></script>
-    <script type="text/javascript" src="~/scripts/mmenu.min.js"></script>
-    <script type="text/javascript" src="~/scripts/chosen.min.js"></script>
-    <script type="text/javascript" src="~/scripts/slick.min.js"></script>
-    <script type="text/javascript" src="~/scripts/rangeslider.min.js"></script>
-    <script type="text/javascript" src="~/scripts/magnific-popup.min.js"></script>
-    <script type="text/javascript" src="~/scripts/waypoints.min.js"></script>
-    <script type="text/javascript" src="~/scripts/counterup.min.js"></script>
-    <script type="text/javascript" src="~/scripts/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="~/scripts/tooltips.min.js"></script>
-    <script type="text/javascript" src="~/scripts/jquery.countdown.min.js"></script>
-    <script type="text/javascript" src="~/scripts/bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript" src="~/assets/scripts/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="~/assets/scripts/popper.min.js"></script>
+    <script type="text/javascript" src="~/assets/scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/assets/scripts/mmenu.min.js"></script>
+    <script type="text/javascript" src="~/assets/scripts/chosen.min.js"></script>
+    <script type="text/javascript" src="~/assets/scripts/slick.min.js"></script>
+    <script type="text/javascript" src="~/assets/scripts/rangeslider.min.js"></script>
+    <script type="text/javascript" src="~/assets/scripts/magnific-popup.min.js"></script>
+    <script type="text/javascript" src="~/assets/scripts/waypoints.min.js"></script>
+    <script type="text/javascript" src="~/assets/scripts/counterup.min.js"></script>
+    <script type="text/javascript" src="~/assets/scripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="~/assets/scripts/tooltips.min.js"></script>
+    <script type="text/javascript" src="~/assets/scripts/jquery.countdown.min.js"></script>
+    <script type="text/javascript" src="~/assets/scripts/bootstrap-datepicker.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initAutocomplete"></script>
     <script src="https://kit.fontawesome.com/6ff3f42b45.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="~/scripts/custom.js"></script>
+    <script type="text/javascript" src="assets/scripts/custom.js"></script>
 </body>
 
 

@@ -16,9 +16,8 @@ namespace Consol_Project_DirectList.Models
         public int Id { get; set; }
         [MaxLength(250)]
         public string Name { get; set; }
-        [ForeignKey("Book")]
-        public int BookId { get; set; }
-        public Book Book { get; set; }
+        public List<Order> Order { get; set; }
+
 
     }
 }

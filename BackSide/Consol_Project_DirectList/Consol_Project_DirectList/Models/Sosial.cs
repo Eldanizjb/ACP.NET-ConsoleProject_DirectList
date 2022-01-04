@@ -22,5 +22,7 @@ namespace Consol_Project_DirectList.Models
         public string Name { get; set; }
         [MaxLength(250)]
         public string Link { get; set; }
+        [MaxLength(250)]
+        public string Color{ get; set; }
     }
 }

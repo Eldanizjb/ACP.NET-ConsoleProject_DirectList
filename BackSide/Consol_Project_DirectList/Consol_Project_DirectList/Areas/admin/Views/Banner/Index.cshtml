@@ -2,10 +2,12 @@
 @inject IHttpContextAccessor HttpContextAccessor
 @{
     ViewData["Title"] = "Index";
-    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container">
+    <h1>Banner</h1>
+
     <div class="row">
         <div class="col-lg-12">
             <a class="btn btn-primary mb-3" asp-area="admin" asp-controller="Banner" asp-action="Create">Create</a>
@@ -55,8 +57,8 @@
                                 <td>@item.Suptitle</td>
                                 <td>@item.Page</td>
                                 <td>
-                                    <a class="btn btn-success" asp-area="Admin" asp-controller="Banner" asp-action="Update" asp-route-id="@item.Id">Update</a>
-                                    <a class="btn btn-danger" asp-area="Admin" asp-controller="Banner" asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('Are you sure?')">Delete</a>
+                                    <a class="btn btn-success" asp-area="admin" asp-controller="Banner" asp-action="Update" asp-route-id="@item.Id">Update</a>
+                                    <a class="btn btn-danger" asp-area="admin" asp-controller="Banner" asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('Are you sure?')">Delete</a>
                                 </td>
                             </tr>
                         }

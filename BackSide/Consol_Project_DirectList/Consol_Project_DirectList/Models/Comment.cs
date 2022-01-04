@@ -41,7 +41,9 @@ namespace Consol_Project_DirectList.Models
         public int BlogId { get; set; }
         public Blog Blog { get; set; }
 
-        public List<Details> Details { get; set; }
+        [ForeignKey("Restaurant")]
+        public int RestaurantId { get; set; }
+        public Restaurant Restaurant { get; set; }
 
 
 

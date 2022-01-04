@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Consol_Project_DirectList.Controllers
 {
@@ -23,17 +24,16 @@ namespace Consol_Project_DirectList.Controllers
 
         public IActionResult Index()
         {
-            VmHome model = new VmHome
+            VmHome model = new()
             {
                 Sosial = _context.Sosial.ToList(),
+                Vacation = _context.Vacation.ToList(),
+                Blog = _context.Blog.OrderByDescending(d => d.CreateDate)
+                                  .Take(3).ToList(),
+                Team = _context.Team.OrderByDescending(d => d.Id).Include(tt => tt.TagToTeamSosial).ThenInclude(ts => ts.TeamSosial).ToList(),
+                Restaurant = _context.Restaurant.Take(6).ToList(),
 
-                Blog = _context.Blog.ToList(),
-                ContactPost = _context.ContactPost.ToList(),
-                Position = _context.Position.ToList(),
-                Restaurant = _context.Restaurant.ToList(),
-                TagToContactPost = _context.TagToContactPost.ToList(),
-                Vacation = _context.Vacation.ToList()
-           };
+            };
 
             //HttpContext.Session.SetString("IsAlive", "s;kfjng;frvjskdfnb");
             //CookieOptions options = new CookieOptions()
@@ -44,6 +44,10 @@ namespace Consol_Project_DirectList.Controllers
             //Response.Cookies.Append("card", "1-2", options);
 
             return View(model);
+        }
+        public IActionResult Privacy()
+        {
+            return View();
         }
     }
 }

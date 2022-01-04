@@ -20,9 +20,7 @@ namespace Consol_Project_DirectList.Models
         public string Detail { get; set; }
         [Column(TypeName = "money")]
         public decimal Price { get; set; }
-        [ForeignKey("Details")]
-        public int? DetailsId { get; set; }
-        public Details Details { get; set; }
+     
 
 
     }

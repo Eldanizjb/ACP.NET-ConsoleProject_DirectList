@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Consol_Project_DirectList.Controllers
 {
@@ -21,34 +22,26 @@ namespace Consol_Project_DirectList.Controllers
         }
         public IActionResult Index()
         {
-            VmBlog model = new VmBlog()
-            {
-                Banner = _context.Banner.FirstOrDefault(b => b.Page == "Blog"),
-                Sosial = _context.Sosial.ToList(),
-
-                Blog = _context.Blog.ToList(),
-                Comenter = _context.Comenter.ToList(),
-                Comment = _context.Comment.ToList(),
-                CustomUser = _context.CustomUser.ToList()
-
-    };
-
+            VmBlog model = new();
+            model.Banner = _context.Banner.FirstOrDefault(b => b.Page == "Blog");
+            model.Sosial = _context.Sosial.Take(4).ToList();
+            model.Blog = _context.Blog.Include(c => c.CustomUser).Take(3).ToList();
             return View(model);
         }
 
         public IActionResult Details(int? id)
         {
-            VmBlog model = new VmBlog()
+            VmBlog model = new();
+            if (model != null)
             {
-                Banner = _context.Banner.FirstOrDefault(b => b.Page == "BlogDetails"),
-                Blog = _context.Blog.ToList(),
-                Comenter = _context.Comenter.ToList(),
-                Comment = _context.Comment.ToList(),
-                CustomUser = _context.CustomUser.ToList()
-            };
-
-            return View(model);
-
+                ViewBag.Blogin = _context.Blog.Take(3).OrderByDescending(b => b.CreateDate).ToList();
+                model.Banner = _context.Banner.FirstOrDefault(b => b.Page == "BlogDetails");
+                model.Sosial = _context.Sosial.Take(4).ToList();
+                model.Blogin = _context.Blog.Include(cu => cu.CustomUser).Include(c => c.Comment).ThenInclude(cr => cr.Comenter).FirstOrDefault(b => b.Id == id);
+                return View(model);
+            }
+            return RedirectToAction("Index");
         }
     }
+
 }
