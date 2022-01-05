@@ -76,13 +76,13 @@ namespace Consol_Project_DirectList.Areas.admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            TeamSosial teamSosial = _context.TeamSosial.Find(id);
-            if (teamSosial == null)
+            TeamSosial TeamSosial = _context.TeamSosial.Find(id);
+            if (TeamSosial == null)
             {
                 HttpContext.Session.SetString("NullDataError", "Can not found the data");
                 return RedirectToAction("Index");
             }
-            _context.TeamSosial.Remove(teamSosial);
+            _context.TeamSosial.Remove(TeamSosial);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -5,5 +5,58 @@
     Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
 
+<div class="container">
+    <h1>Order</h1>
+    <div class="row">
+        <div class="col-lg-6">
+            <form asp-area="admin" asp-controller="Order" asp-action="Create" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="mb-3">
+                    <label asp-for="@Model.Name" class="form-label">Name</label>
+                    <input class="form-control" asp-for="@Model.Name">
+                    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="@Model.GuestCount" class="form-label">GuestCount</label>
+                    <input class="form-control" asp-for="@Model.GuestCount">
+                    <span asp-validation-for="@Model.GuestCount" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="@Model.CreateDate" class="form-label">CreateDate</label>
+                    <input class="form-control" asp-for="@Model.CreateDate">
+                    <span asp-validation-for="@Model.CreateDate" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="@Model.OrderDate" class="form-label">OrderDate</label>
+                    <input class="form-control" asp-for="@Model.OrderDate">
+                    <span asp-validation-for="@Model.OrderDate" class="text-danger"></span>
+                </div>     
+                <div class="mb-3">
+                    <label asp-for="@Model.IdentityCard" class="form-label">IdentityCard</label>
+                    <input class="form-control" asp-for="@Model.IdentityCard">
+                    <span asp-validation-for="@Model.IdentityCard" class="text-danger"></span>
+                </div>    
+                <div class="mb-3">
+                                 <label asp-for="@Model.Phone" class="form-label">Phone</label>
+                    <input class="form-control" asp-for="@Model.Phone">
+                    <span asp-validation-for="@Model.Phone" class="text-danger"></span>
+                </div>  
+                <div class="mb-3">
+                     <label asp-for="@Model.GuestId" class="form-label">GuestId</label>
+                    <input class="form-control" asp-for="@Model.GuestId">
+                    <span asp-validation-for="@Model.GuestId" class="text-danger"></span>
+                </div>  
+                <div class="mb-3">
+                     <label asp-for="@Model.RestaurantId" class="form-label">RestaurantId</label>
+                    <input class="form-control" asp-for="@Model.RestaurantId">
+                    <span asp-validation-for="@Model.RestaurantId" class="text-danger"></span>
+                </div>    
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a asp-area="admin" asp-controller="Order" asp-action="Index">Back to list</a>
+            </form>
+        </div>
+    </div>
+</div>

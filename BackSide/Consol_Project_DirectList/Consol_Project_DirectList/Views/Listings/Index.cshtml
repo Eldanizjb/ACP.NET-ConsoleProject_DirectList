@@ -49,11 +49,11 @@
                                                 {
 
 
-                                                    <span class="badge badge-pill list-banner badge-success">Open</span>
+                                                    <span class="badge badge-pill list-Banner badge-success">Open</span>
                                                 }
                                                 else
                                                 {
-                                                    <span class="badge badge-pill list-banner badge-danger">Closed</span>
+                                                    <span class="badge badge-pill list-Banner badge-danger">Closed</span>
                                                 }
                                             </span>
                                             <div class="listing-item-inner">
@@ -70,7 +70,7 @@
                                                 }
                                             </div>
                                             <a asp-controller="Listings" asp-action="AddToCart" asp-route-id="@restaurant.Id">
-                                                <span class="round-pill like-banner d-block bg-primary @(Model.AddToCart!=null?Model.AddToCart.Any(a => a==restaurant.Id.ToString())==true?"myadded":"":"") "><i class="fa fa-heart-o"></i></span>
+                                                <span class="round-pill like-Banner d-block bg-primary @(Model.AddToCart!=null?Model.AddToCart.Any(a => a==restaurant.Id.ToString())==true?"myadded":"":"") "><i class="fa fa-heart-o"></i></span>
 
 
 

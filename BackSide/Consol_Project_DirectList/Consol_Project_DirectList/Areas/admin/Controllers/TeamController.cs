@@ -65,10 +65,10 @@ namespace Consol_Project_DirectList.Areas.admin.Controllers
                         {
                             foreach (var item in model.TagToTeamId)
                             {
-                                TagToTeamSosial tagToSosial = new();
-                                tagToSosial.TeamSosialId = item;
-                                tagToSosial.Id = model.Id;
-                                _context.TagToTeamSosial.Add(tagToSosial);
+                                TagToTeamSosial tagToBanner = new();
+                                tagToBanner.TeamSosialId = item;
+                                tagToBanner.Id = model.Id;
+                                _context.TagToTeamSosial.Add(tagToBanner);
                                 _context.SaveChanges();
                             }
                         }
@@ -135,8 +135,8 @@ namespace Consol_Project_DirectList.Areas.admin.Controllers
                             _context.SaveChanges();
 
                             //Delete old data
-                            List<TagToTeamSosial> tagToSosials = _context.TagToTeamSosial.Where(tb => tb.TeamId == model.Id).ToList();
-                            foreach (var item in tagToSosials)
+                            List<TagToTeamSosial> tagToBanners = _context.TagToTeamSosial.Where(tb => tb.TeamId == model.Id).ToList();
+                            foreach (var item in tagToBanners)
                             {
                                 _context.TagToTeamSosial.Remove(item);
                             }
@@ -146,10 +146,10 @@ namespace Consol_Project_DirectList.Areas.admin.Controllers
                             {
                                 foreach (var item in model.TagToTeamId)
                                 {
-                                    TagToTeamSosial tagToSosial = new ();
-                                    tagToSosial.TeamSosialId = item;
-                                    tagToSosial.Id = model.Id;
-                                    _context.TagToTeamSosial.Add(tagToSosial);
+                                    TagToTeamSosial tagToBanner = new ();
+                                    tagToBanner.TeamSosialId = item;
+                                    tagToBanner.Id = model.Id;
+                                    _context.TagToTeamSosial.Add(tagToBanner);
                                 }
                                 _context.SaveChanges();
 

@@ -549,3 +549,6 @@ C:\Users\ACER\Desktop\ASP.NET\ACP.NET-ConsoleProject_DirectList\BackSide\Consol_
 C:\Users\ACER\Desktop\ASP.NET\ACP.NET-ConsoleProject_DirectList\BackSide\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\RestaurantTag\Create.cshtml.g.cs
 C:\Users\ACER\Desktop\ASP.NET\ACP.NET-ConsoleProject_DirectList\BackSide\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\RestaurantMenu\Update.cshtml.g.cs
 C:\Users\ACER\Desktop\ASP.NET\ACP.NET-ConsoleProject_DirectList\BackSide\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\RestaurantTag\Update.cshtml.g.cs
+C:\Users\ACER\Desktop\ASP.NET\ACP.NET-ConsoleProject_DirectList\BackSide\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\Sosial\Index.cshtml.g.cs
+C:\Users\ACER\Desktop\ASP.NET\ACP.NET-ConsoleProject_DirectList\BackSide\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\Sosial\Create.cshtml.g.cs
+C:\Users\ACER\Desktop\ASP.NET\ACP.NET-ConsoleProject_DirectList\BackSide\Consol_Project_DirectList\Consol_Project_DirectList\obj\Debug\net5.0\Razor\Areas\admin\Views\Sosial\Update.cshtml.g.cs

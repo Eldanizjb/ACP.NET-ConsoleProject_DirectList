@@ -27,6 +27,7 @@ namespace Consol_Project_DirectList.Controllers
             VmHome model = new()
             {
                 Sosial = _context.Sosial.ToList(),
+                Banner = _context.Banner.FirstOrDefault(b => b.Page == "Home"),
                 Vacation = _context.Vacation.ToList(),
                 Blog = _context.Blog.OrderByDescending(d => d.CreateDate)
                                   .Take(3).ToList(),

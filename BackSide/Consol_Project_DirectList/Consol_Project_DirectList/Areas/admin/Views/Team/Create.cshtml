@@ -31,7 +31,7 @@
                 <div class="mb-3">
                     <label asp-for="@Model.TagToTeamId" class="form-label">TeamSosial</label>
                     <select class="form-control mb-3 selectTwo" aria-label="Default select example" multiple="multiple" asp-for="@Model.TagToTeamId">
-                        <option selected>Select SosialName</option>
+                        <option selected>Select BannerName</option>
                         @foreach (var item in ViewBag.TeamSosial)
                         {
                             <option value="@item.Id">@item.Name</option>

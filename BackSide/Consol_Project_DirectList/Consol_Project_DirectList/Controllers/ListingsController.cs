@@ -76,7 +76,7 @@ namespace DirectList.Controllers
 
 
             Setting setting = _context.Setting.FirstOrDefault();
-            List<Sosial> Sosials = _context.Sosial.ToList();
+            List<Sosial> sosials = _context.Sosial.ToList();
             Restaurant restaurant = _context.Restaurant.Include(tr => tr.TagToRestaurant).ThenInclude(t => t.RestaurantTag)
                                                             .Include(fr => fr.FeatureToRestaurants).ThenInclude(f => f.RestaurantFeatures)
                                                             .Include(mr => mr.MenuToRestaurants).ThenInclude(m => m.RestaurantMenu)
@@ -85,7 +85,7 @@ namespace DirectList.Controllers
                                                             .FirstOrDefault(i => i.Id == id);
             VmBook restaurantt = new ()
             {
-                Sosial = Sosials,
+                Sosial = sosials,
                 Setting = setting,
                 Restaurant = restaurant,
                 Banner = _context.Banner.FirstOrDefault(b => b.Page == "Restaurant"),
@@ -105,11 +105,11 @@ namespace DirectList.Controllers
         public IActionResult Reserve(VmBook model)
         {
             Setting setting = _context.Setting.FirstOrDefault();
-            List<Sosial> Sosial = _context.Sosial.ToList();
+            List<Sosial> sosials = _context.Sosial.ToList();
 
             VmBook vmBook = new ()
             {
-                Sosial = Sosial,
+                Sosial = sosials,
                 Setting = setting
             };
 
@@ -169,13 +169,13 @@ namespace DirectList.Controllers
         public IActionResult Comment(VmListings model)
         {
             Setting setting = _context.Setting.FirstOrDefault();
-            List<Sosial> Sosial = _context.Sosial.ToList();
+            List<Sosial> sosials = _context.Sosial.ToList();
             List<Restaurant> restaurants = _context.Restaurant.ToList();
 
 
             VmListings vmRestaurant = new ()
             {
-                Sosial = Sosial,
+                Sosial = sosials,
                 Setting = setting,
                 Comment = model.Comment,
                 Restaurant = model.Restaurant,

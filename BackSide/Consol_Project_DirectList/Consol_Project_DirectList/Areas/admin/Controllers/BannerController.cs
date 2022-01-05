@@ -13,7 +13,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace Consol_Project_DirectList.Areas.admin.Controllers
 {
-    [Area("Admin")]
+    [Area("admin")]
     [Authorize(Roles = "Moderator")]
     public class BannerController : Controller
     {
@@ -75,13 +75,13 @@ namespace Consol_Project_DirectList.Areas.admin.Controllers
                 return RedirectToAction("Index");
             }
 
-            Banner banner = _context.Banner.Find(id);
-            if (banner == null)
+            Banner Banner = _context.Banner.Find(id);
+            if (Banner == null)
             {
                 HttpContext.Session.SetString("NullDataError", "Can not found the data");
                 return RedirectToAction("Index");
             }
-            _context.Banner.Remove(banner);
+            _context.Banner.Remove(Banner);
             _context.SaveChanges();
             return RedirectToAction("Index");
         }
