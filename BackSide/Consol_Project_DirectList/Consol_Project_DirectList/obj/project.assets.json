@@ -7309,11 +7309,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ACER\\Desktop\\ASP.NET\\ACP.NET-ConsoleProject_DirectList\\BackSide\\Consol_Project_DirectList\\Consol_Project_DirectList\\Consol_Project_DirectList.csproj",
+      "projectUniqueName": "C:\\Users\\ACER\\source\\repos\\Consol_Project_DirectList\\Consol_Project_DirectList\\Consol_Project_DirectList.csproj",
       "projectName": "Consol_Project_DirectList",
-      "projectPath": "C:\\Users\\ACER\\Desktop\\ASP.NET\\ACP.NET-ConsoleProject_DirectList\\BackSide\\Consol_Project_DirectList\\Consol_Project_DirectList\\Consol_Project_DirectList.csproj",
+      "projectPath": "C:\\Users\\ACER\\source\\repos\\Consol_Project_DirectList\\Consol_Project_DirectList\\Consol_Project_DirectList.csproj",
       "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ACER\\Desktop\\ASP.NET\\ACP.NET-ConsoleProject_DirectList\\BackSide\\Consol_Project_DirectList\\Consol_Project_DirectList\\obj\\",
+      "outputPath": "C:\\Users\\ACER\\source\\repos\\Consol_Project_DirectList\\Consol_Project_DirectList\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",

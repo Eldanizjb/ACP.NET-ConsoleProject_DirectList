@@ -12,11 +12,11 @@
                 <!-- Search -->
                 <div class="col-md-6 grid-full-width page-search mb-3">
                     <div class="main-search-input mt-0">
-                        <form asp-controller="Restaurant" asp-action="Index" method="get" style="display: flex; justify-content: space-around;">
+                        <form asp-controller="Restaurants" asp-action="Index" method="get" style="display: flex; justify-content: space-around;">
 
                             <div class="col-lg-4 col-sm-6">
                                 <div class="form-group">
-                                    <input asp-for="@Model.Search.searchData" placeholder="Restaurant Name" class="form-control" style="color:black;">
+                                    <input asp-for="@Model.Search.searchData" placeholder="" class="form-control" style="color:black;">
                                 </div>
                             </div>
                             <div class="col-lg-2 col-sm-6 text-right">
@@ -40,15 +40,13 @@
                                     <div class="listing-item">
                                         <!-- Image -->
                                         <div class="listing-item-image">
-                                            <a asp-controller="Listings" asp-action="Restaurant" asp-route-id="@restaurant.Id"><img src="~/Uploads/@restaurant.Image" alt="Image"></a>
+                                            <a asp-controller="Listings" asp-action="Restaurants" asp-route-id="@restaurant.Id"><img src="~/assets/images/@restaurant.Image" alt="Image"></a>
                                         </div>
                                         <!-- Content -->
                                         <div class="listing-item-content">
                                             <span text-uppercase">
                                                 @if ((restaurant.OpeningTime.Hour < DateTime.Now.Hour && restaurant.OpeningTime.Minute <= DateTime.Now.Minute) && (restaurant.ClosingTime.Hour > DateTime.Now.Hour && restaurant.ClosingTime.Minute <= DateTime.Now.Minute))
                                                 {
-
-
                                                     <span class="badge badge-pill list-Banner badge-success">Open</span>
                                                 }
                                                 else
@@ -58,7 +56,7 @@
                                             </span>
                                             <div class="listing-item-inner">
                                                 <!-- <DirectlistRating [rate]="list.rating"></DirectlistRating> -->
-                                                <a asp-controller="Listings" asp-action="Restaurant" asp-route-id="@restaurant.Id">
+                                                <a asp-controller="Listings" asp-action="Restaurants" asp-route-id="@restaurant.Id">
                                                     <h3>@restaurant.Name</h3>
                                                 </a>
                                                 <div class="address-bar"> <small>@restaurant.Adresses</small> </div>

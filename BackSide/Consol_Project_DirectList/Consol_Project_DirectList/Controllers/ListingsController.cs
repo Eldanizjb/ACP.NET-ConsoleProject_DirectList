@@ -79,6 +79,7 @@ namespace DirectList.Controllers
             List<Sosial> sosials = _context.Sosial.ToList();
             Restaurant restaurant = _context.Restaurant.Include(tr => tr.TagToRestaurant).ThenInclude(t => t.RestaurantTag)
                                                             .Include(fr => fr.FeatureToRestaurants).ThenInclude(f => f.RestaurantFeatures)
+                                                            .Include(mr => mr.ContactPhoneToRestaurant).ThenInclude(m => m.RestaurantContactPhone)
                                                             .Include(mr => mr.MenuToRestaurants).ThenInclude(m => m.RestaurantMenu)
                                                             .Include(a => a.AdministrationToRestaurant).ThenInclude(m => m.RestaurantAdministration)
                                                             .Include(rc => rc.Comments)
